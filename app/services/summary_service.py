@@ -8,7 +8,7 @@ import pytextrank
 # mais le chargement du modèle prend du temps et nécessite plus de ressources.
 # Utile si on veut un résumé “propre” et fluide.
 
-"""
+
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 def summarize_text(text: str) -> str:
@@ -23,7 +23,7 @@ def summarize_text(text: str) -> str:
     )
 
     return summary[0]["summary_text"]
-"""
+
 
 # Version 2 : résumé extractif avec spaCy + PyTextRank
 # Cette approche est plus légère : elle sélectionne les phrases les plus importantes
@@ -32,7 +32,7 @@ def summarize_text(text: str) -> str:
 # Pratique pour comparer une méthode simple avec une méthode plus avancée.
 
 # (à installer avec : python -m spacy download fr_core_news_md, voir comment rajouter cette commande directement lors de la création du venv)
-nlp = spacy.load("fr_core_news_md")
+""" nlp = spacy.load("fr_core_news_md")
 nlp.add_pipe("textrank")
 
 def summarize_text(text: str) -> str:
@@ -47,3 +47,4 @@ def summarize_text(text: str) -> str:
         return text
 
     return " ".join(key_sentences)
+    """

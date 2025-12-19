@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Transcription audio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Transcription audio</h1>
+
+<form id="transcription-form">
+    <label>Fichier audio :</label>
+    <input type="file" name="audio" required>
+
+    <label>Résumé :</label>
+    <select name="summary">
+        <option value="false">Non</option>
+        <option value="true">Oui</option>
+    </select>
+
+    <button type="submit">Transcrire</button>
+</form>
+
+<div class="console">
+    <h2>Transcription</h2>
+    <pre id="transcription-output"></pre>
+</div>
+
+<div id="loader" class="loader hidden">
+    <div class="progress-bar"></div>
+    <p>Transcription en cours...</p>
+</div>
+
+<div class="console">
+    <h2>Résumé</h2>
+    <pre id="summary-output"></pre>
+</div>
+
+<script>
+document.getElementById("transcription-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const loader = document.getElementById("loader");
+    const transcriptionOutput = document.getElementById("transcription-output");
+    const summaryOutput = document.getElementById("summary-output");
+
+    transcriptionOutput.textContent = "";
+    summaryOutput.textContent = "";
+
+    loader.classList.remove("hidden");
+
+    const formData = new FormData(this);
+    const summary = formData.get("summary");
+
+    try {
+        const response = await fetch(`/transcribe?summary=${summary}`, {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        transcriptionOutput.textContent = data.transcription || "";
+        summaryOutput.textContent = data.summary || "";
+
+    } catch (error) {
+        transcriptionOutput.textContent = "Erreur pendant la transcription.";
+    } finally {
+        loader.classList.add("hidden");
+    }
+});
+</script>
+
+</body>
+</html>

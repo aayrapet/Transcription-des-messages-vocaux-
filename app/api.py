@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flasgger import Swagger
 import os
 
@@ -12,6 +12,9 @@ def create_app():
     app = Flask(__name__)
 
     swagger = Swagger(app, template_file="docs/swagger.yaml")
+    @app.route("/", methods=["GET"])
+    def index():
+       return render_template("index.html")
 
     @app.route('/transcribe', methods=['POST'])
     def transcribe():
