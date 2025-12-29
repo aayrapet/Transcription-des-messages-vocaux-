@@ -1,24 +1,37 @@
 set -e
 
-# Détection de python en fonction de l'OS
-if command -v python3 &>/dev/null; then
-    PYTHON=python3
-elif command -v python &>/dev/null; then
-    PYTHON=python
-elif command -v py &>/dev/null; then
-    PYTHON="py"
+#use only  Python 3.11 (mac,windowd)
+if command -v python3.11 &>/dev/null; then
+    PYTHON=python3.11
+elif command -v py &>/dev/null && py -3.11 --version &>/dev/null; then
+    PYTHON="py -3.11"
 else
-    echo "Aucun interpréteur Python trouvé."
+    echo "Python 3.11 not found. Install Python 3.11 and retry."
     exit 1
 fi
 
+echo "Using Python: $PYTHON"
+
+#create virtual environmen tin which we store libraries
 $PYTHON -m venv .venv
 
+#activate venv mac or windows 
 source .venv/Scripts/activate 2>/dev/null || source .venv/bin/activate
 
-$PYTHON -m pip install --upgrade pip
-$PYTHON -m pip install -r requirements.txt
+#install libraries 
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+#make sure for pytest that bot package can be imported , the path will be TGBOT/
+python -m pip install -e .
 
+pytest || {
+  echo "Tests failed"
+  deactivate
+  exit 1
+}
 
-echo "Environnement prêt. Pour l'activer exécute : source .venv/bin/activate"
-echo "source .venv/bin/activate"
+echo "Environment ready."
+echo "Activate with:"
+echo "source .venv/Scripts/activate    # Windows Git Bash"
+echo "source .venv/bin/activate        # Linux / Mac / WSL"
+echo "py -3.11 -m bot.main       # run tg bot "
