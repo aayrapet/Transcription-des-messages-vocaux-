@@ -1,7 +1,11 @@
 import whisper
 
-def transcribe_audio(file_path):
-    model = whisper.load_model("base")
-    #model = whisper.load_model("small") pour améliorer la transcription, mais attention long temps de traitement
+_MODELS = {}
+
+def transcribe_audio(file_path, model_name="tiny"):
+    if model_name not in _MODELS:
+        _MODELS[model_name] = whisper.load_model(model_name)
+
+    model = _MODELS[model_name]
     result = model.transcribe(file_path)
     return result["text"]
