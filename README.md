@@ -44,7 +44,7 @@ Exemple de rendu sur Telegram:
 git clone <url_du_repo>
 cd Transcription-des-messages-vocaux-
 docker compose up --build
-
+```
 
 Accès à l'interface web : http://localhost:5000
 Accès à la documentation Swagger : http://localhost:5000/apidocs/
