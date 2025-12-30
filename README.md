@@ -77,6 +77,8 @@ Note: Ces spécificités sont intrinsèquement liées à la version de Whisper A
 
 Exemple de rendu sur Telegram:
 
+![Interface Telegram](images/Telegram.jpg)
+
  ### Application Web
  **Prérequis**
 - Docker installé
@@ -104,3 +106,6 @@ L'application présente différents niveaux de perfection selon la version de Wh
 Le dossier **Fichiers audios** contient des audios qui permettent à l'utilisateur de tester l'application.
  
 Exemple de rendu sur l'application Web: 
+
+![Transcription audio](images/Transcription%20audio.png)
+![Transcription audio](images/Transcription%20audio1.png)
