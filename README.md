@@ -47,6 +47,7 @@ docker compose up --build
 ```
 
 Accès à l'interface web : http://localhost:5000
+
 Accès à la documentation Swagger : http://localhost:5000/apidocs/
 
 ⚠️ Le premier build Docker ainsi que le chargement initial de l’interface peuvent prendre plusieurs minutes, notamment en raison du téléchargement des modèles de transcription.
