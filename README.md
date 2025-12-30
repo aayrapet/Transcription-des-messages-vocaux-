@@ -78,7 +78,7 @@ Note: Ces spécificités sont intrinsèquement liées à la version de Whisper A
 Exemple de rendu sur Telegram:
 
 <p align="center">
-  <img src="images/Telegram.jpg" width="600"/>
+  <img src="images/Telegram.jpg" width="300"/>
 </p>
 
  ### Application Web
