@@ -10,7 +10,7 @@
 ---
 
 ## Objectif
-Ce projet a pour objectif de **convertir un message vocal en texte** avec **résumé automatique**.  
+Ce projet a pour objectif de **convertir un message vocal en texte** avec **résumé automatique** et **traduction**.  
 Il vise à faciliter l’analyse et la synthèse de conversations, réunions ou messages vocaux grâce à une interface API simple et efficace.
 
 ---
@@ -20,7 +20,8 @@ Il vise à faciliter l’analyse et la synthèse de conversations, réunions ou 
 - **OpenAI Whisper API** / **SpeechRecognition** — Transcription vocale (speech-to-text)  
 - **Transformer (BART via Hugging Face)** — Résumé automatique du texte  
 - **Pytest** — Tests unitaires  
-- **Docker** — Conteneurisation et déploiement reproductible  
+- **Docker** — Conteneurisation et déploiement reproductible
+- `Python-telegram-bot` package 
 
 ---
 
@@ -53,7 +54,8 @@ La structure arborescente du projet est la suivante :
                 │     └─ audio_utils.py               
                 │
                 ├─ tests/
-                │  ├─ test_api.py  
+                │  ├─ test_api.py
+                   ├─ test_bot.py  
                 │  ├─ test_summary.py              
                 │  └─ test_transcription.py
                 │
