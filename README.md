@@ -1,3 +1,4 @@
+
 # Transcription de messages vocaux
 
 ---
@@ -25,9 +26,9 @@ Il vise à faciliter l’analyse et la synthèse de conversations, réunions ou 
 
 ## Architecture du projet
 
-The following is the tree structure of the project:
+La structure arborescente du projet est la suivante :
 
-.. code-block:: plaintext
+```plaintext
 
                 Transcription-des-messages-vocaux-/
                 ├─ app/
@@ -64,7 +65,7 @@ The following is the tree structure of the project:
                 ├─ dockerfile   
                 ├─ requirements.txt
                 └─ setup_env.sh
-
+```
 
 ---
 ## Résultats
