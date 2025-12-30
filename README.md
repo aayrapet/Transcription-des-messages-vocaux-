@@ -77,7 +77,9 @@ Note: Ces spécificités sont intrinsèquement liées à la version de Whisper A
 
 Exemple de rendu sur Telegram:
 
-![Interface Telegram](images/Telegram.jpg)
+<p align="center">
+  <img src="images/Telegram.jpg" width="280"/>
+</p>
 
  ### Application Web
  **Prérequis**
@@ -107,5 +109,9 @@ Le dossier **Fichiers audios** contient des audios qui permettent à l'utilisate
  
 Exemple de rendu sur l'application Web: 
 
-![Transcription audio](images/Transcriptionaudio.png)
-![Transcription audio](images/Transcriptionaudio1.png)
+<p align="center">
+  <img src="images/Transcriptionaudio.png" width="600"/>
+</p>
+<p align="center">
+  <img src="images/Transcriptionaudio1.png" width="600"/>
+</p>
