@@ -115,6 +115,14 @@ Exemple de rendu sur Telegram:
 bash ./setup_env.sh
 ```
 
+Puis, activez la `.venv` créé et lancez :
+
+```bash
+python -m app.api
+```
+
+
+
 ### 2️⃣ Option 2 — Lancement avec Docker
 
 ```bash
