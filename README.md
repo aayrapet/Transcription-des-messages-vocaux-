@@ -80,6 +80,7 @@ Exemple de rendu sur Telegram:
  ### Application Web
  **Prérequis**
 - Docker installé
+- L'utilisation en local de whisper nécessite de télécharger ffmpeg sur sa machine via le lien https://www.ffmpeg.org/download.html ,sinon la transcription renvoie une erreur.
 
 **Lancement avec Docker**
 ```bash
