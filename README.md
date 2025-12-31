@@ -105,6 +105,8 @@ Exemple de rendu sur Telegram:
 - Download https://ffmpeg.org/ and add to system environment variables to path C:\ffmpeg\bin (important) 
 
 ### Option 2 — Exécution via Docker
+
+- Git
 - Docker installé
 - Docker Compose installé
 
